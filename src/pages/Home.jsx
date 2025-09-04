@@ -53,7 +53,7 @@ return (
             <div className=" 
                         min-h-screen 
                         overflow-hidden
-                        p-6
+                        p-3 md:p-6
                         flex 
                         flex-col 
                         items-center 
@@ -63,48 +63,52 @@ return (
                            bg-clip-text 
                            text-transparent 
                            font-extrabold 
-                           text-5xl 
-                           py-5
-                           mb-6">
+                           text-3xl md:text-5xl 
+                           py-3 md:py-5
+                           mb-4 md:mb-6
+                           text-center">
                     LingoTongue!!
                 </h1>
                 {/* translator section  */}
                 <div className="bg-blue-950/60
-                            rounded-4xl 
+                            rounded-2xl md:rounded-4xl 
                             flex
                             flex-col
                             justify-center
-                          
-                            gap-6
-                            w-9/10
-                            h-110">
+                            gap-4 md:gap-6
+                            w-full md:w-9/10
+                            min-h-96 md:h-110
+                            p-4 md:p-0">
 
                     {/* soucre in engilsh */}
                     <div className="flex
-                                    justify-evenly
+                                    flex-col md:flex-row
+                                    justify-center md:justify-evenly
                                     w-full
-                                    h-2/3
+                                    h-auto md:h-2/3
+                                    gap-4 md:gap-0
                                     ">
                         <div className="bg-gradient-to-r from-blue-800/50 to-emerald-600/50 
                                     backdrop-blur-lg
-                                    rounded-4xl
-                                    w-2/5
+                                    rounded-2xl md:rounded-4xl
+                                    w-full md:w-2/5
                                     shadow-md 
-                                    
+                                    p-4 md:p-0
                                     ">
                             <div className="flex
-                                        justify-between">
+                                        justify-between
+                                        items-center">
                                 <h2 className="text-green-200
-                                        text-lg
+                                        text-base md:text-lg
                                         font-semibold
                                         mb-2
-                                        mx-10
-                                        my-7">US English</h2>
+                                        mx-2 md:mx-10
+                                        my-4 md:my-7">US English</h2>
                                 <div className="bg-gradient-to-r from-blue-800/50 to-emerald-600/50 
-                                        w-20
-                                        h-8
-                                        my-7
-                                        mx-10
+                                        w-16 md:w-20
+                                        h-6 md:h-8
+                                        my-4 md:my-7
+                                        mx-2 md:mx-10
                                         text-center
                                         mb-2
                                         text-white border
@@ -113,8 +117,11 @@ return (
                                         bg-white/10  
                                         shadow-inner
                                         hover:bg-white/20 
-                                        transition 
-                                        
+                                        transition
+                                        flex
+                                        items-center
+                                        justify-center
+                                        text-sm md:text-base
                                         ">
                                     Source
                                 </div>
@@ -123,15 +130,14 @@ return (
                                 value={char}
                                 onChange={charcount}
                                 placeholder="Enter your text to translate...."
-                                className="min-w-4/5
-                                              h-3/5
-                                              rounded-2xl
+                                className="w-1/2 md:min-w-4/5
+                                              h-32 md:h-3/5
+                                              rounded-xl md:rounded-2xl
                                               placeholder:text-gray-400
-                                              pl-2.5
-                                              pt-2.5
+                                              p-2 md:pl-2.5 md:pt-2.5
                                               text-white
                                               bg-black/30
-                                              mx-10
+                                              mx-0 md:mx-10
                                               outline-none
                                               border
                                               border-transparent
@@ -140,7 +146,10 @@ return (
                                              shadow-[0_0_15px_#38bdf8]
                                               " />
                             <p className="text-gray-400
-                                                  mx-10
+                                          mx-0 md:mx-10
+                                          font-semibold
+                                          text-2xs
+                                          md:text-base
                                                   ">
                                 {char.length} Character {char.length !== 1}
                             </p>
@@ -148,24 +157,25 @@ return (
                         {/* translated text */}
                         <div className="bg-gradient-to-r from-emerald-600/50 to-blue-800/50
                                     backdrop-blur-lg
-                                    rounded-4xl
-                                    w-2/5
+                                    rounded-2xl md:rounded-4xl
+                                    w-full md:w-2/5
                                     shadow-md 
-                                    
+                                    p-4 md:p-0
                                     ">
                             <div className="flex
-                                        justify-between">
+                                        justify-between
+                                        items-center">
                                 <h2 className="text-green-200
-                                        text-lg
+                                        text-base md:text-lg
                                         font-semibold
                                         mb-2
-                                        mx-10
-                                        my-7">{lang || "Select"}</h2>
+                                        mx-2 md:mx-10
+                                        my-4 md:my-7">{lang || "Select"}</h2>
                                 <div className="bg-gradient-to-r from-blue-800/50 to-emerald-600/50 
-                                        w-20
-                                        h-8
-                                        my-7
-                                        mx-10
+                                        w-16 md:w-20
+                                        h-6 md:h-8
+                                        my-4 md:my-7
+                                        mx-2 md:mx-10
                                         text-center
                                         mb-2
                                         text-white border
@@ -174,20 +184,23 @@ return (
                                         bg-white/10  
                                         shadow-inner
                                         hover:bg-white/20 
-                                        transition ">Target</div>
+                                        transition
+                                        flex
+                                        items-center
+                                        justify-center
+                                        text-sm md:text-base">Target</div>
                             </div>
 
                             <textarea
                                 placeholder="Translation will apear here...."
-                                className="min-w-4/5
-                                              h-3/5
-                                              rounded-2xl
+                                className="w-1/2 md:min-w-4/5
+                                              h-32 md:h-3/5
+                                              rounded-xl md:rounded-2xl
                                               placeholder:text-gray-400
-                                              pl-2.5
-                                              pt-2.5
+                                              p-2 md:pl-2.5 md:pt-2.5
                                               text-white
                                               bg-black/30
-                                              mx-10
+                                              mx-0 md:mx-10
                                               outline-none
                                               border
                                               border-transparent
@@ -198,7 +211,9 @@ return (
                                              value={result} />
 
                             <p className="text-gray-400
-                                                  mx-10
+                                          mx-0 md:mx-10
+                                          font-semibold
+                                          text-sm md:text-base
                                                   ">
                                 {char.length} Character {char.length !== 1}
                             </p>
@@ -210,9 +225,11 @@ return (
                     <div className=" flex
                                  flex-col
                                  items-center
+                                 gap-2 md:gap-0
                                     ">
                         <label htmlFor="drop-down"
                             className="text-green-200
+                                     text-sm md:text-base
                                      ">
                             Translate to
                         </label>
@@ -222,11 +239,13 @@ return (
                             className="bg-gradient-to-r from-blue-800/50 via-emerald-600/50 to-blue-800/50
                                     backdrop-blur-lg
                                     rounded-lg
-                                    min-w-2/5
+                                    w-48 md:min-w-2/5
                                     shadow-md
                                     text-green-200
                                     outline-none
                                     cursor-pointer
+                                    p-2 md:p-1
+                                    text-sm md:text-base
                                     "
                         >
                             <option className="bg-black" value="">Select</option>
@@ -240,9 +259,9 @@ return (
                             <option className="bg-black" value="ko">Korean</option>
                         </select>
                         <button className="bg-gradient-to-r from-blue-800/50 to-emerald-600/50 
-                                        w-20
-                                        h-8
-                                        mt-2
+                                        w-24 md:w-20
+                                        h-10 md:h-8
+                                        mt-3 md:mt-2
                                         
                                         text-center
                                         mb-2
@@ -256,32 +275,37 @@ return (
                                         cursor-pointer 
                                         flex
                                         items-center
-                                        justify-center" onClick={handleText}>
+                                        justify-center
+                                        text-sm md:text-base" onClick={handleText}>
                                             {
-                                                loading?(<Loader className="animate-spin"/>) : "Translate"
+                                                loading?(<Loader className="animate-spin w-4 h-4 md:w-5 md:h-5"/>) : "Translate"
                                             }</button>
                     </div>
                 </div>
 
                 {/* footer */}
-                <footer className=" min-w-screen
+                <footer className=" w-full md:min-w-screen
                            bg-gradient-to-r from-blue-900/30 to-purple-600/30
                            text-white 
-                           h-24
-                           p-5
-                           m-6
+                           h-auto md:h-24
+                           p-3 md:p-5
+                           m-3 md:m-6
                            rounded-t-xl 
                            shadow-inner">
                     <div className="max-w-6xl
                   mx-auto 
-                  px-4 
+                  px-2 md:px-4 
                   flex 
                   flex-col 
-                  items-center ">
+                  items-center 
+                  gap-2 md:gap-0">
                         <p className="mb-2 
-                  md:mb-0">&copy; {new Date().getFullYear()} LingoTongue. All rights reserved.</p>
+                  md:mb-0
+                  text-sm md:text-base
+                  text-center">&copy; {new Date().getFullYear()} LingoTongue. All rights reserved.</p>
                         <div className="flex 
-                    space-x-4">
+                    space-x-4
+                    text-sm md:text-base">
                             <a href="#" className="hover:underline">Privacy</a>
                             <a href="#" className="hover:underline">Terms</a>
                             <a href="#" className="hover:underline">Contact</a>

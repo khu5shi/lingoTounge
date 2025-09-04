@@ -52,11 +52,12 @@ return (
         <div className="relative z-10">
             <div className=" 
                         min-h-screen 
-                        overflow-hidden
+                        overflow-y-auto
                         p-3 md:p-6
                         flex 
                         flex-col 
                         items-center 
+                        pb-20
                         ">
                 <h1 className="bg-gradient-to-r
                            from-pink-500 via-red-500 to-yellow-500 
